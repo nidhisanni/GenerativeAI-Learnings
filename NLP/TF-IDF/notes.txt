@@ -1,0 +1,116 @@
+🔹 What is TF-IDF?
+
+TF-IDF is a statistical method to figure out how important a word is in a document relative to a collection of documents (the corpus).
+
+It improves upon Bag of Words (BoW), which only counts how often a word appears — TF-IDF also considers how unique that word is across all documents.
+
+🧠 Example
+
+Let’s say you have 3 documents:
+
+Document	Text
+D1	"I love machine learning"
+D2	"I love deep learning"
+D3	"Machine learning is fun"
+🔹 Step 1: TF — Term Frequency
+
+This measures how often a word appears in a document.
+
+𝑇
+𝐹
+(
+𝑡
+)
+=
+Number of times term t appears in a document
+Total words in the document
+TF(t)=
+Total words in the document
+Number of times term t appears in a document
+	​
+
+
+Example:
+In D1, TF(“machine”) = 1/3
+
+🔹 Step 2: IDF — Inverse Document Frequency
+
+This measures how unique or rare a word is across all documents.
+
+𝐼
+𝐷
+𝐹
+(
+𝑡
+)
+=
+log
+⁡
+(
+Total number of documents
+Number of documents containing the term t
+)
+IDF(t)=log(
+Number of documents containing the term t
+Total number of documents
+	​
+
+)
+
+So:
+
+Common words like “love” or “learning” appear in many documents → low IDF
+
+Rare words like “machine” appear in fewer documents → high IDF
+
+🔹 Step 3: Combine Both
+𝑇
+𝐹
+-
+𝐼
+𝐷
+𝐹
+=
+𝑇
+𝐹
+(
+𝑡
+)
+×
+𝐼
+𝐷
+𝐹
+(
+𝑡
+)
+TF-IDF=TF(t)×IDF(t)
+
+So, words that:
+
+appear often in one document (high TF)
+
+but rarely in others (high IDF)
+→ get a high TF-IDF score.
+
+That means they’re more important to that document.
+
+🧩 Intuitive Summary
+Method	What it does	Example insight
+BoW	Counts word frequency	“love” appears twice
+TF-IDF	Weighs words by importance	“machine” matters more than “love”
+🧠 Real-Life Analogy
+
+Imagine you’re reading student essays.
+
+The word “the” appears in every essay → not special.
+
+The word “Transformer” appears in only one essay → unique and meaningful.
+
+TF-IDF gives more weight to “Transformer” than to “the”.
+
+📈 Used in:
+
+✅ Search engines (Google uses a version of it!)
+✅ Document similarity
+✅ Text classification
+✅ Keyword extraction

@@ -18,3 +18,4 @@ print("Bigrams:", bigrams)
 # Trigrams
 trigrams = list(ngrams(tokens, 3))
 print("Trigrams:", trigrams)
+
